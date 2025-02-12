@@ -27,19 +27,14 @@ st.markdown(
 
 # Load the model
 import gdown
+import os
 import tensorflow as tf
-import os 
 
-file_id = "16kzE67L33qKjs57LyAO7sIW116jfPMPY"
-model_url = f"https://drive.google.com/uc?id={file_id}"
-
+drive_url = "https://drive.google.com/uc?id=16kzE67L33qKjs57LyAO7sIW116jfPMPY"
 output_path = "model1.keras"
 
 if not os.path.exists(output_path):
-    print("🔄 Model not found, downloading...")
-    gdown.download(model_url, output_path, quiet=False)
-else:
-    print("✅ Model already exists, skipping download.")
+    gdown.download(drive_url, output_path, quiet=False)
 
 model = tf.keras.models.load_model(output_path)
 # Define tumor classes (Ensure order matches model output)
