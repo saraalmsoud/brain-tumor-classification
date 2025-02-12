@@ -26,8 +26,26 @@ st.markdown(
 )
 
 # Load the model
-model = tf.keras.models.load_model("model1.keras")
+import gdown
+import tensorflow as tf
+import os  # نضيف مكتبة os للتحقق من وجود الملف
 
+# رابط Google Drive المباشر للمودل
+file_id = "16kzE67L33qKjs57LyAO7sIW116jfPMPY"
+model_url = f"https://drive.google.com/uc?id={file_id}"
+
+# مسار حفظ المودل
+output_path = "model1.keras"
+
+# التحقق مما إذا كان المودل موجودًا مسبقًا، إذا لم يكن موجودًا، يتم تحميله
+if not os.path.exists(output_path):
+    print("🔄 Model not found, downloading...")
+    gdown.download(model_url, output_path, quiet=False)
+else:
+    print("✅ Model already exists, skipping download.")
+
+# تحميل المودل في المشروع
+model = tf.keras.models.load_model(output_path)
 # Define tumor classes (Ensure order matches model output)
 classes = ["glioma", "meningioma", "notumor", "pituitary"]
 
