@@ -22,10 +22,3 @@ It detects and classifies brain tumors into four categories:
 ## Live Demo  🚀 
 Try the app here: 👉 [Brain Tumor Classification App](https://brain-tumor-classification-detect.streamlit.app/)  
 
----
-
-
-📩 Contact
-
-💌 If you have any questions, feel free to reach out:
-📧 sarahalmsooud@gmail.com | 🔗 www.linkedin.com/in/sara-alqhatani-857758345
